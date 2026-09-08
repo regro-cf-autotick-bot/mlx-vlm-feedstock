@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mlx-vlm
-  version: "0.6.17"
+  version: 0.7.0
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mlx_vlm-${{ version }}.tar.gz
-  sha256: 5e4ff5426af093b3cf41b4e5e33c272db82fa33000cb3c36a1aab9e218ad7ee7
+  sha256: 0bfc3ae1f82cb0a7866bf9f1257d672f6450c5fbd13f22b2d62fddb72b759379
 
 build:
   number: 0
@@ -27,7 +27,7 @@ requirements:
     - sed
   run:
     - python >=${{ python_min }}
-    - mlx >=0.32.0
+    - mlx >=0.32.2
     - tqdm >=4.66.2
     - transformers >=5.14.0
     - pillow >=10.3.0
@@ -37,12 +37,13 @@ requirements:
     - uvicorn
     - miniaudio >=1.59
     - opencv >=4.12.0.88
-    - mlx-audio >=0.4.3
+    - mlx-audio >=0.4.8
     - llguidance >=1.7.0
     - starlette >=1.0.1
     - python-multipart >=0.0.9
     - websockets >=14.0
     - sentencepiece >=0.2.0
+    - jinja2 >=3.1.0
 tests:
   - python:
       python_version: ${{ python_min }}.*
